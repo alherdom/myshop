@@ -10,7 +10,7 @@ migrate app="":
 makemigrations app="":
     python manage.py makemigrations {{ app }}
 
-runserver:
+run:
     python manage.py runserver
 
 startapp app:
