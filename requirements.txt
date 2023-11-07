@@ -1,6 +1,8 @@
 django
+prettyconf
 pillow
 requests
 django-debug-toolbar
 celery
 flower
+stripe

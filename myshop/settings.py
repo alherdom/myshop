@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from prettyconf import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     "shop.apps.ShopConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,10 @@ MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 CART_SESSION_ID = "cart"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Stripe settings
+STRIPE_PUBLISHABLE_KEY = config("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")  
+STRIPE_API_VERSION = config("STRIPE_API_VERSION")  
